@@ -1,0 +1,272 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  
+  --webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  font-family: "Mulish", sans-serif;
+
+  --color-bar: hsla(195, 91%, 25%, 1);
+  --fc-white: #FFF;
+}
+
+body {
+  font-size: 1.6rem;
+  
+	margin: 0 auto;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  width: 43rem;
+
+	margin: 0 auto;
+}
+
+header {
+  display: flex;
+  background: var(--color-bar);
+
+
+  height: 7.2rem;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2.55rem;
+
+  padding: 1.2rem 2.8rem;
+
+  
+}
+
+.logo { 
+  width: 4rem;
+  height: 4rem;
+}
+
+.input-wrapper input {
+  display: flex;
+
+  border: none;
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.20);
+  color: var(--fc-white);
+
+  height: 4rem;
+  width: 24.1rem;
+  
+  padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+  align-items: center;
+
+  font-family: Mulish;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.profile img{
+  width: 4.2rem;
+  height: 4.2rem;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+
+main .catPoster {
+  width: 43rem;
+}
+
+.content {
+  margin: 3.1rem 2.2rem 0;
+}
+
+.content h1{
+  color: var(--platform-aliases-shape-principal, #202024);
+
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+
+  margin-bottom: 1rem;
+}
+
+.content img {
+  margin-right: 1.2rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+.content p {
+  margin-top: 3.1rem;
+
+  color: var(--platform-aliases-background, #121214);
+
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  margin: 3.2rem 2.2rem;
+
+  gap: 3.2rem;
+}
+
+aside h1 { 
+  color: var(--platform-aliases-shape-principal, #202024);
+
+  font-size: 2.4rem;
+
+  font-weight: 700;
+  line-height: 160%
+}
+
+figure {
+  display: flex;
+
+  align-content: center;
+  height: 9rem;
+}
+
+figure img {
+  width: 15.1rem;
+  height: 9rem;
+}
+
+
+figcaption {
+  margin-left: 1.6rem;
+
+}
+
+figcaption h2 {
+  color: var(--platform-aliases-shape-principal, #202024);
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+}
+
+figcaption p {
+  margin-top: .4rem;
+
+  color: var(--platform-aliases-background, #121214);
+
+  font-size: 1.4rem;
+
+  width: 21.5rem;
+  height: 5.4rem;
+}
+
+footer p{
+  background: var(--color-bar);
+  color: var(--fc-white);
+
+  text-align: center;
+  padding: 1.6rem;
+  font-weight: 600;
+}
+
+header {
+  --startY: -100%;
+  animation: move 1s .2s backwards;
+}
+
+main {
+  animation: appear 1s .5s ease-in backwards;
+}
+
+footer {
+  --startY: 100%;
+  animation: move 1s 2s backwards;
+}
+
+@media (min-width: 1028px) {
+  #app {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main aside"
+    "footer footer footer";
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  .input-wrapper input {
+    width: 108.3rem; 
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  main .catPoster {
+    margin-top: 4.4rem;
+
+    width: 80.3rem;
+    height: 40.5rem;
+    flex-shrink: 0;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  main {
+    margin-left: 10.9rem;
+  }
+
+  .content p {
+    width: 80rem;
+    margin-bottom: 3.9rem;
+  }
+
+  aside {
+    margin-right: 10.9rem;
+    margin-left: 3.4rem;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+  
+
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }  
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
